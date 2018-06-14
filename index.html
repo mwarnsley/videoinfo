@@ -9,7 +9,19 @@
             <label for="video_selection">Select a video</label>
             <input id="video_selection" type="file" accept="video/*" />
         </div>
+        <button type="submit">Get Info</button>
     </form>
+
+    <script>
+        // IPC (Inter Process Communication) Usage Allowing to communicate to parts of the electron app
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const file = document.querySelector('input').files[0];
+        });
+    </script>
 </body>
 
 </html>
