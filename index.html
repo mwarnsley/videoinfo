@@ -1,15 +1,23 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
 
 <body>
-    <h1>Video Info</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="navbar-header">
+                <h1 class="navbar-brand">Video Info</h1>
+            </div>
+        </div>
+    </nav>
     <form>
         <div>
             <label for="video_selection">Select a video</label>
             <input id="video_selection" type="file" accept="video/*" />
         </div>
-        <button type="submit">Get Info</button>
+        <button class="btn btn-danger" type="submit">Get Info</button>
     </form>
 
     <h1 id="result"></h1>
