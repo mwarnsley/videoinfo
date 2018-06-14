@@ -5,9 +5,12 @@
 // Import the required modules using the Node.js syntax
 const electron = require('electron');
 // Lifecycle of the running electron application
-const { app } = electron;
+const { app, BrowserWindow } = electron;
 
 // Running the ready event on the app
 app.on('ready', () => {
-  console.log('The App is now ready');
+  // Starting a new browser window for the application
+  const mainWindow = new BrowserWindow({});
+  // Telling the window to go out and load up an html document
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 });
