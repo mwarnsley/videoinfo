@@ -12,6 +12,8 @@
         <button type="submit">Get Info</button>
     </form>
 
+    <h1 id="result"></h1>
+
     <script>
         // IPC (Inter Process Communication) Usage Allowing to communicate to parts of the electron app
         const electron = require('electron');
@@ -19,7 +21,17 @@
 
         document.querySelector('form').addEventListener('submit', (event) => {
             event.preventDefault();
-            const file = document.querySelector('input').files[0];
+
+            // Grabbing the path property off of the file
+            const { path } = document.querySelector('input').files[0];
+
+            //Sending message over to the electron side of the application
+            ipcRenderer.send('video:submit', path);
+        });
+
+        // Getting the contents from the electron portion of the application
+        ipcRenderer.on('video:metadata', (event, duration) => {
+            document.getElementById('result').innerHTML = `Video is ${duration} seconds`;
         });
     </script>
 </body>

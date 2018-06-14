@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mwarnsley/videoinfo#readme",
   "dependencies": {
-    "electron": "^2.0.2"
+    "electron": "^2.0.2",
+    "fluent-ffmpeg": "^2.1.2"
   }
 }
